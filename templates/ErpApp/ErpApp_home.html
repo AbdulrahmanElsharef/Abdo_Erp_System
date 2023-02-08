@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load bootstrap %}
-{%block body%}
+{% comment %} {% load bootstrap %} {% endcomment %}
+{% block body %}
 <!-- في المكان ده هحط المحتوى -->
 
 
@@ -83,7 +83,7 @@
           </div>
           <!-- /.card-header -->
           <!-- form start -->
-          <form method="POST" enctype="multipart/form-data">
+          {% comment %} <form method="POST" enctype="multipart/form-data">
             <div class="card-body">
               {{ form|bootstrap }}
               {% csrf_token %}
@@ -92,7 +92,7 @@
             <div class="card-footer">
               <button type="submit" value="submit" class="btn btn-primary">اضافة</button>
             </div>
-          </form>
+          </form> {% endcomment %}
         </div>
 
         <!-- /.card -->
@@ -105,18 +105,18 @@
       <div class="row justify-content-center mb-3">
         <div class="col-4 ">
           <ul class="nav">
-            {%for cat in categories|slice:'8' %}
+            {% for cat in Categories|slice:'8' %}
             <li class="nav-item ">
               <a id="" class="nav-link bg-primary" href="#">{{cat.name}}</a>
             </li>
-            {%endfor%}
+            {% endfor %}
           </ul>
         </div>
       </div>
       <!-- books -->
 
       <div class="row">
-        {%for item in items%}
+        {% for item in items %}
         <!-- الكتب -->
         <div id="" class="col-md-4">
           <!-- Widget: user widget style 1 -->
@@ -141,10 +141,10 @@
               <h5 class="widget-user-desc">{{item.brand}}</h5>
             </div>
             <div class="widget-user-image">
-              {%if item.brand_img%}
+              {% if item.brand_img %}
               <img style="width:100px; height: 100px;" class="img-circle elevation-2" src="{{item.brand_img.url}}"
                 alt="User Avatar">
-              {%endif%}
+              {% endif %}
             </div>
             <div class="card-footer">
               <div class="row">
@@ -176,7 +176,7 @@
                     {% else %}
                     <span class="description-text">حالة المنتج</span>
                     <h3 class="description-header text-warning">{{item.status}}</h3>
-                    {%endif%}
+                    {% endif %}
                   </div>
                   <!-- /.description-block -->
                 </div>
@@ -188,7 +188,7 @@
           <!-- /.widget-user -->
         </div>
         <!-- نهاية الكتاب -->
-        {%endfor%}
+        {% endfor %}
 
         <div class="row">
           <div class="col text-center">
@@ -203,4 +203,4 @@
 <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
-{%endblock%}
+{% endblock %}
