@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+<!-- {% load bootstrap %} -->
+{%block body%}
+<div style="direction: rtl;" class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">اضافة صنف جديد</h3>
+      </div>
+      <!-- /.card-header -->
+      <!-- form start -->
+      <form method="POST" enctype="multipart/form-data">
+        <div class="card-body">
+          {{ form }}
+          {% csrf_token %}
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+          <button type="submit" value="submit" class="btn btn-primary">اضافة</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
