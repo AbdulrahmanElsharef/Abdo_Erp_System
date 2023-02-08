@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-<!-- {% load bootstrap %} -->
-{%block body%}
+{% load bootstrap %}
+{% block body %}
 <div style="direction: rtl;" class="wrapper">
 
   <!-- Content Wrapper. Contains page content -->
@@ -14,12 +14,12 @@
       <!-- form start -->
       <form method="POST" enctype="multipart/form-data">
         <div class="card-body">
-          {{ form }}
+          {{ form|bootstrap }}
           {% csrf_token %}
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-          <button type="submit" value="submit" class="btn btn-primary">اضافة</button>
+          <button type="submit" value="Confirm" class="btn btn-primary">اضافة</button>
         </div>
       </form>
     </div>

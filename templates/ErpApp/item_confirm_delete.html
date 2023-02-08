@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div style="direction: rtl;" class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="card card-danger">
+      <div class="card-header">
+        <h3 class="card-title">حذف الصنف</h3>
+      </div>
+      <!-- /.card-header -->
+      <!-- form start -->
+      <form method="POST" enctype="multipart/form-data">
+
+        <div class="row">
+          {% csrf_token %}
+          <h3 class="p-3">هل تريد حقاً حذف هذا الصنف ؟</h3>
+          <h5 class="p-3">{{object}}</h5>
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+          <button type="submit" value="submit" class="btn btn-danger">حذف</button>
+
+          <button data-target="#" type="submit" class="btn btn-success">تراجع</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

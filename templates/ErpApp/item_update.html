@@ -1,35 +1,29 @@
 {% extends 'base.html' %}
-
-{%block body%}
+{% load bootstrap %}
+{% block body %}
 <div style="direction: rtl;" class="wrapper">
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="card card-danger">
+    <div class="card card-primary">
       <div class="card-header">
-        <h3 class="card-title">حذف الكتاب</h3>
+        <h3 class="card-title">تعديل صنف </h3>
       </div>
       <!-- /.card-header -->
       <!-- form start -->
       <form method="POST" enctype="multipart/form-data">
-
-        <div class="row">
-
-          <p class="p-3">هل تريد حقاً حذف الكتاب؟</p>
-
+        <div class="card-body">
+          {{ form|bootstrap }}
+          {% csrf_token %}
         </div>
         <!-- /.card-body -->
-
         <div class="card-footer">
-          <button type="submit" class="btn btn-danger">حذف</button>
-
-          <button data-target="#" type="submit" class="btn btn-success">تراجع</button>
+          <button type="submit" value="submit" class="btn btn-primary"> تعديل  </button>
         </div>
       </form>
     </div>
   </div>
 </div>
-
 
 {%endblock%}
