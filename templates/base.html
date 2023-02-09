@@ -1,5 +1,5 @@
 {% load static %}
-{% comment %} {% load bootstrap %} {% endcomment %}
+
 <!DOCTYPE html>
 <html lang="ar">
 
@@ -34,7 +34,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
       </li>
 
     </ul>
@@ -78,7 +78,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
           <li class="nav-item">
-            <a href="add" class="nav-link">
+            <a href="items" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 ALL Items
@@ -104,36 +104,13 @@
             </a>
           </li> -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="/Categories" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
-
-              <li class="nav-item">
-
-
-                <p class="text-light"> Add Category </p>
-
-              </li>
-              <form id="cat" method="POST">
-                {% comment %} {% csrf_token %}
-                {{ form_cat|bootstrap }} {% endcomment %}
-                <button type="submit" value="submit" class="btn btn-success">Add New</button>
-              </form>
-              {% comment %} {%for cat in categories %} {% endcomment %}
-              <li style="cursor: pointer;" class="nav-item">
-                <a id="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>{{cat.name}}</p>
-                </a>
-              </li>
-              {% comment %} {%endfor%} {% endcomment %}
-
-            </ul>
           </li>
         </ul>
       </nav>
