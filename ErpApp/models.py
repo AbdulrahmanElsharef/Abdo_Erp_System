@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 # Create your models here.
-
+from taggit.managers import TaggableManager
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
@@ -33,6 +33,7 @@ class Item(models.Model):
     slug=models.SlugField(null=True,blank=True)
     category = models.ForeignKey(
         Category, on_delete=models.PROTECT, related_name='Category')
+    tag=TaggableManager()
 
     def __str__(self):
         return self.name
