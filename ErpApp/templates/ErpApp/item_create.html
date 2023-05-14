@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block body %}
+<div style="direction: rtl;" class="wrapper">
+
+  <!-- Content Wrapper. Contains page content -->
+  <div   class="content-wrapper">
+    <!-- Content Header (Page header) -->
+<div  class="card card-primary">
+    <div class="card-header">
+      <h3 class="card-title">اضافة صنف </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">اضافة</button>
+        {% endbuttons %}
+      <!-- <div class="card-body">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <input type="text" class="form-control" placeholder="input text">
+        <small id='totalrente' class="form-text text-muted"></small>
+      </div> -->
+      <!-- /.card-body -->
+
+      <!-- <div class="card-footer">
+        <button type="submit" class="btn btn-primary">حفظ</button>
+      </div> -->
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}
+
